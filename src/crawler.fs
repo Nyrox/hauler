@@ -10,7 +10,7 @@ module crawler
     let ERROR_LOG_PATH = "error.log"
 
     let error_log (error: Exception) =
-        System.IO.File.WriteAllText(ERROR_LOG_PATH, error.Message)
+        System.IO.File.AppendAllText(ERROR_LOG_PATH, error.Message)
 
     /// Convert's a URI String to a slug by replacing all valid URI characters that are "dangerous" to safe alternatives
     /// Note that this only takes care of the host and path section of a URI, not the protocol section
@@ -53,10 +53,7 @@ module crawler
             Seq.cast hrefs
 
     let get_absolute_uri (base_uri: Uri) (link: string): Uri =
-        if link.StartsWith("//") then (new Uri(link))
-        else if link.StartsWith("/") then (new Uri(base_uri, link))
-        else if link.Contains("://") then (new Uri(link))
-        else (new Uri(base_uri, link))
+        new Uri (base_uri, link)
 
     /// <summary>
     /// Given a URI crawls that URI and adds it to the index
