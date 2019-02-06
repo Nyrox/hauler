@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>fsharp_problems</RootNamespace>
@@ -6,7 +5,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="src/common.fs" />
     <Compile Include="src/crawler.fs" />
+    <Compile Include="src/indexer.fs" />
     <Compile Include="src/Program.fs" />
   </ItemGroup>
   <Import Project=".paket\Paket.Restore.targets" />
