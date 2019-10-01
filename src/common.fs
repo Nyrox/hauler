@@ -17,3 +17,33 @@ module weights =
         let h4 = 0.4
         let h5 = 0.3
         let h6 = 02
+
+
+
+module cdf =
+
+    // modelled after opengraph
+    type DocumentMetadata =
+        {
+            title: string
+            description: string
+        }
+
+    type Element =
+        {
+            content: string
+            significance: int
+        }
+
+    ///
+    ///
+    /// TODO:
+    ///
+    /// - Implement semantic storage of links
+    ///
+    ///
+    type Document =
+        {
+            metadata: DocumentMetadata
+            elements: Element list
+        }

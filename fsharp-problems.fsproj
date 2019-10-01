@@ -8,6 +8,7 @@
     <Compile Include="src/common.fs" />
     <Compile Include="src/crawler.fs" />
     <Compile Include="src/indexer.fs" />
+	<Compile Include="src/search.fs" />
     <Compile Include="src/Program.fs" />
   </ItemGroup>
   <Import Project=".paket\Paket.Restore.targets" />

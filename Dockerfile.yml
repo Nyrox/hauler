@@ -1,0 +1,6 @@
+from fsharp:netcore
+
+COPY . /web-search-app
+CD /web-search-app
+
+RUN dotnet run -c Release
